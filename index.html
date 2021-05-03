@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Tracery Demos</title>
+	<link rel="stylesheet" href="css/layout.css">
+
+</head>
+
+<body>
+	<div id="container">
+
+		<div id="content">
+
+			<h1>Number</h1>
+			<button onclick=generateNumber()>Click Here for Random Number</button>
+			<div id="number">
+
+
+			</div>
+
+
+
+		</div>
+	</div>
+	<script>
+		function generateNumber() {
+
+			indexNumber = ['787', '939'];
+			threeNumber = Math.floor(Math.random() * 1000).toString();
+			if (threeNumber < 10) {
+				threeNumber = '00' + threeNumber;
+			}
+			else if (threeNumber < 100) {
+				threeNumber = '0' + threeNumber;
+			}
+
+
+			fourNumbers = Math.floor(Math.random() * 10000).toString();
+			if (fourNumbers < 10) {
+				fourNumbers = '000' + fourNumbers;
+			}
+			else if (fourNumbers < 100) {
+				fourNumbers = '00' + fourNumbers;
+			}
+			else if (fourNumbers < 1000) {
+				fourNumbers = '0' + fourNumbers;
+			}
+			fullNumber = '(' + indexNumber[Math.floor(Math.random() * 100) % 2] + ') ' + threeNumber + '-' + fourNumbers + '';
+
+			firstName = ['Gabriel A. ', 'Eduardo ', 'Javier ', 'Yao Wei K. '];
+			lastName = ['Santiago ', 'Plaza ', 'Santín ', 'Fung  ', 'Sen ', 'Martínez ', 'Sullivan ', 'Pérez '];
+			indexForFirstName = Math.floor(Math.random() * 10) % 4;
+			indexForLastName1 = Math.floor(Math.random() * 10) % 8;
+			indexForLastName2 = Math.floor(Math.random() * 10) % 8;
+			fullName = firstName[indexForFirstName] + lastName[indexForLastName1] + lastName[indexForLastName2] + ' - ';
+
+			document.getElementById('number').innerHTML = fullName + fullNumber;
+
+		}
+	</script>
+	<script src="js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="js/tracery.min.js"></script>
+	<script src="js/grammars.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/sketch.js"></script>
+
+</body>
+
+</html>
